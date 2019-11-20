@@ -1,0 +1,59 @@
+* {
+  font-family: 'alata';
+}
+
+.contenedor {
+  background: url(background.png);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+}
+
+.juego {
+  padding: 20px;
+  border-radius: 8px;
+  background:linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+}
+
+.carta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  width: 125px;
+  height: 125px;
+  background-color: #2e3d49;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carta.visible {
+  cursor: not-allowed;
+}
+
+.carta .numero {
+  font-size: 80px;
+  color: azure;
+}
+
+.carta .icono {
+  display: none;
+}
+
+.carta.visible .icono {
+  display: inline;
+}
+
+.carta.visible .numero {
+  display: none;
+}
