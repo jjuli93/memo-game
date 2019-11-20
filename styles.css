@@ -43,7 +43,7 @@
 }
 
 .carta.visible {
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .carta .numero {
