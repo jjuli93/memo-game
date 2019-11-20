@@ -1,21 +1,22 @@
 const cartas = document.querySelectorAll(".carta");
 
-let ultimoSeleccionado = null;
+const seleccionados = [];
 
 const handleClick = (carta) => {
+  seleccionados.push(carta);
   const nombre = carta.dataset.nombre;
-  carta.classList.add("visible")
-  if (ultimoSeleccionado ) {
+  carta.classList.add("visible");
+  const longitudArray = seleccionados.length; 
+
+  if (longitudArray % 2 === 0 ) {
     setTimeout(() => {
+      const ultimoSeleccionado = seleccionados[longitudArray - 2];
       if(ultimoSeleccionado.dataset.nombre !== nombre) {
         carta.classList.remove("visible")
         ultimoSeleccionado.classList.remove("visible");
       }
-      ultimoSeleccionado = null;
     }, 1000)
   }
-  else
-    ultimoSeleccionado = carta;
 }
 
 cartas.forEach(carta => {
